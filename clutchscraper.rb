@@ -46,7 +46,7 @@ def export_to_csv(leads)
 end
 
 def run
-    puts "Enter the number of agency pages you want to scrape on Clutch.co (max: 500)"
+    print "Enter the number of agency pages you want to scrape on Clutch.co (max: 500): "
     input = gets.chomp
 
     leads = [] 
@@ -56,7 +56,7 @@ def run
     input.to_i.times do |num|
         puts "Scraping Clutch.co Agencies page #{num + 1}"
         leads << scrape_page(num)
-        sleep(3)
+        sleep(5)
     end
 
     leads = leads.flatten
