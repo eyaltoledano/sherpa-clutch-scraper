@@ -3,7 +3,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-require './pages.rb'
 require 'csv'
 
 def scrape_page(page_number = 0)
@@ -37,7 +36,7 @@ def export_to_csv(leads)
     sleep(1)
     puts "All done."
 
-    puts "Savings to exports/#{file_name}.csv"
+    puts "Saving lead file to exports/#{file_name}.csv"
 
     CSV.open("./exports/#{file_name}.csv", "ab") do |csv|
         leads.each do |lead|
